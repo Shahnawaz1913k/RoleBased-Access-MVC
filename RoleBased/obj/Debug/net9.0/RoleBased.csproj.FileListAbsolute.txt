@@ -231,3 +231,4 @@
 /Users/shahnawazalam/Documents/Wipro/Milestone 3/RoleBased/obj/Debug/net9.0/RoleBased.pdb
 /Users/shahnawazalam/Documents/Wipro/Milestone 3/RoleBased/obj/Debug/net9.0/RoleBased.genruntimeconfig.cache
 /Users/shahnawazalam/Documents/Wipro/Milestone 3/RoleBased/obj/Debug/net9.0/ref/RoleBased.dll
+/Users/shahnawazalam/Documents/Wipro/Milestone 3/RoleBased/obj/Debug/net9.0/RoleBased.sourcelink.json

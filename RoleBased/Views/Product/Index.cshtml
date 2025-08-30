@@ -11,10 +11,8 @@
 }
 
 <p>
-    @if (User.IsInRole("Admin"))
-    {
-        <a asp-action="Create" class="btn btn-success">Create New Product</a>
-    }
+    
+    <a asp-action="Create" class="btn btn-success">Create New Product</a>
 </p>
 
 <table class="table">
@@ -35,10 +33,7 @@
             <td>@String.Format("{0:C}", p.Price)</td>
             <td>
                 <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-primary btn-sm">Edit</a>
-                @if (User.IsInRole("Admin"))
-                {
-                    <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-danger btn-sm">Delete</a>
-                }
+                <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>
     }

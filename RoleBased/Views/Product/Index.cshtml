@@ -1,0 +1,46 @@
+@model IEnumerable<RoleBased.ViewModels.ProductViewModel>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Products</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create" class="btn btn-success">Create New Product</a>
+    }
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@String.Format("{0:C}", p.Price)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-primary btn-sm">Edit</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-danger btn-sm">Delete</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
